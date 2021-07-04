@@ -26,3 +26,15 @@ lot_summary <- suspension_data %>% group_by(Manufacturing_Lot) %>% summarize(Mea
 
 # Deliverable 3
 
+# Use the t.test() function to determine if the PSI across all manufacturing lots is statistically different from the population mean of 1,500 PSI.
+t.test(suspension_data$PSI, mu = 1500)
+
+# Use the t.test() function and its subset() argument to determine if the PSI for each manufacturing lot is statistically different from the population mean of 1,500 PSI.
+manu_lot_1 <- subset(suspension_data, Manufacturing_Lot == 'Lot1')
+t.test(manu_lot_1$PSI, mu = 1500)
+
+manu_lot_2 <- subset(suspension_data, Manufacturing_Lot == 'Lot2')
+t.test(manu_lot_2$PSI, mu = 1500)
+  
+manu_lot_3 <- subset(suspension_data, Manufacturing_Lot == 'Lot3')
+t.test(manu_lot_3$PSI, mu = 1500)
